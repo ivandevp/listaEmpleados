@@ -1,1 +1,1 @@
-﻿//alert('hola');
+﻿angular.module('myModule', ['ui.bootstrap']);

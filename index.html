@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
 
-    <h1>Hola {{nombre}}</h1>
+    
     <div class="contenedor">
-        <form action="">
-            ¿Cómo te llamas? <input type="text" ng-model="nombre">
-        </form>
+        <div class="row">
+            <div class="col-lg-offset-4 col-lg-4 ">
+                <h1 class="center">Obtener Datos</h1>
+                <button type="button" class="btn btn-primary btn-sm">Mostrar Datos</button>
+            </div>
+        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script src="ui-bootstrap-tpls-2.5.0.min"></script>
     <script src="app.js"></script>
 </body>
 </html>
