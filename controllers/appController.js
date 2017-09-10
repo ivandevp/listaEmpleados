@@ -2,10 +2,6 @@
 
 app.config(function ($routeProvider) {
 	$routeProvider
-		.when('/', {
-			templateUrl: '../index.html',
-			controller: 'testController'
-		})
 		.when('/mostrar-datos',{
 			templateUrl: '../tablaUsuarios.html',
 			controller: 'datosTabla'
@@ -26,7 +22,7 @@ function obtieneDatos($scope, testRequest, $uibModal, $location) {
         testRequest.post().then(function (response) {
         	// post tiene los datos
             $scope.post = response.data[0];
-            seccionStorage.setTime('datos',
+            sessionStorage.setItem('datos',
             		JSON.stringify({
             			id: $scope.post.id,
             			nombre: $scope.post.name,
@@ -34,8 +30,8 @@ function obtieneDatos($scope, testRequest, $uibModal, $location) {
             			email: $scope.post.email
             		})
             	);
-        // mostrar datos en la tabla
-    	$location.path(path);
+		        // mostrar datos en la tabla
+		    	$location.path(path);
         });
     }
 
@@ -44,5 +40,5 @@ function obtieneDatos($scope, testRequest, $uibModal, $location) {
 app.controller('datosTabla',['$scope',mostrarDatos]);
 
 function mostrarDatos($scope) {
-	$scope.objetoUsuarios = JSON.parse(seccionStorage.getItem('datos'));
+	$scope.objetoUsuarios = JSON.parse(sessionStorage.getItem('datos'));
 }
