@@ -5,8 +5,8 @@
     <title>Formulario</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
-<body ng-controller="testController">
-    <div class="contenedor">
+<body>
+    <div class="container">
         <div class="row">
             <div class="col-lg-offset-4 col-lg-4 center">
                 <h1 class="center">Obtener Datos</h1>
@@ -14,12 +14,14 @@
         </div>
         <div class="row">
             <div class="col-lg-offset-5 col-lg-2 ">
-                <button type="button" class="btn btn-primary btn-sm" ng-click="obtenerNombres()">Mostrar Datos</button>
+                <button type="button" class="btn btn-primary btn-sm" ng-click="obtenerNombres('/mostrar-datos')">Mostrar Datos</button>
             </div>
         </div>
+            <div ng-view></div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
     <script src="./services/ui-bootstrap-tpls-2.5.0.min.js"></script>
     <script src="./controllers/appController.js"></script>
     <script src="./services/servicioApi.js"></script>
